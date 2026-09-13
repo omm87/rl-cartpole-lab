@@ -1,0 +1,2 @@
+algo_config:
+  gamma: 0.995
