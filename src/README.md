@@ -1,11 +1,11 @@
 # Source code
 
-Place the custom experiment code in this directory.
+This directory contains the custom experimental layer built on top of `safe-control-gym`.
 
-Planned files:
+- `cartpole_rl_lab.py` — main GUI implementation for PPO training, evaluation, real-time CartPole animation, plots, metrics, robustness tests, and policy comparison.
+- `run_lab.py` — standalone entry point used by `scripts/run_gui.sh`. It adapts the original path assumptions so the GUI can run from this independent repository.
+- `rl_experiment.py` — lower-level RL experiment/evaluation helper retained from the safe-control-gym workflow.
 
-- `cartpole_rl_lab.py` — main GUI for training, evaluation, real-time animation, plots, metrics, robustness tests, and policy comparison.
-- `cartpole_gui.py` — earlier/simpler evaluation GUI, if you want to keep it for reference.
-- `rl_experiment.py` — direct training/evaluation experiment entry point.
+The PPO algorithm itself remains provided by `safe-control-gym`.
 
-The PPO implementation itself remains provided by `safe-control-gym`; these files are the custom experimental layer built around it.
+Generated runtime directories such as `config_overrides/`, `lab_configs/`, `lab_runs/`, and `temp_rl_lab_eval/` are created locally by the setup/GUI workflow and are ignored by Git.
