@@ -8,15 +8,15 @@ This project uses the existing CartPole environment and PPO implementation from 
 
 The stabilization target is
 
-\[
-s_{\mathrm{ref}} = [0,\;0,\;0,\;0]^T
-\]
+$$
+\mathbf{s}_{\mathrm{ref}} = [0,\ 0,\ 0,\ 0]^T
+$$
 
 with state
 
-\[
-s = [x,\;\dot{x},\;\theta,\;\dot{\theta}]^T.
-\]
+$$
+\mathbf{s} = [x,\ \dot{x},\ \theta,\ \dot{\theta}]^T
+$$
 
 The actor outputs a continuous action which is mapped to the physical cart force.
 
@@ -122,15 +122,15 @@ The scripts are intentionally small wrappers so the actual configuration passed 
 
 The project also connects RL design choices with familiar optimal-control concepts. The stage-cost structure
 
-\[
+$$
 J_t = q_x e_x^2 + q_{\dot{x}}\dot{x}^2 + q_\theta e_\theta^2 + q_{\dot{\theta}}\dot{\theta}^2 + R_u u^2
-\]
+$$
 
 is conceptually similar to the LQR objective
 
-\[
-J_{\mathrm{LQR}} = \sum_k (x_k^T Q x_k + u_k^T R u_k).
-\]
+$$
+J_{\mathrm{LQR}} = \sum_k \left(x_k^T Q x_k + u_k^T R u_k\right)
+$$
 
 The analogy is useful for interpreting reward-weight experiments, while the main distinction remains that PPO learns a nonlinear policy from sampled interaction rather than computing an analytic linear feedback gain from a model.
 
