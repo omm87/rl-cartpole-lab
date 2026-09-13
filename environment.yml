@@ -3,13 +3,22 @@ name: rl-cartpole-lab
 channels:
   - conda-forge
 
+# Base environment for the standalone RL CartPole Lab.
+# safe-control-gym itself is installed in editable mode by scripts/bootstrap.sh
+# because the GUI also uses its training script directly.
 dependencies:
   - python=3.10
+  - pip
+  - setuptools
+  - wheel
+  - git
   - numpy
+  - scipy
   - matplotlib
   - pytorch
-  - pybullet
-  - pip
+  - pybullet=3.25
+  - pyyaml
+  - tk
   - pip:
       - gymnasium
       - casadi
