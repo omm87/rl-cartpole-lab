@@ -1,0 +1,23 @@
+name: Static checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Check shell script syntax
+        run: bash -n scripts/*.sh
+
+      - name: Check Python syntax
+        run: python -m py_compile src/cartpole_rl_lab.py src/run_lab.py src/rl_experiment.py
