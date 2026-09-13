@@ -22,12 +22,12 @@ class CartPoleRLLab(_CoreCartPoleRLLab):
         # project root is one level above src/.
         self.project_root = Path(__file__).resolve().parent.parent
 
-        # The core training method resolves the upstream training script as
-        #   self.repo_root / "safe_control_gym" / "experiments" / ...
-        # scripts/bootstrap.sh therefore clones safe-control-gym into
+        # The core training method appends
+        #   safe_control_gym/experiments/train_rl_controller.py
+        # to self.repo_root. bootstrap.sh clones the upstream repository to
         #   <project>/safe_control_gym/
-        # and setting repo_root to <project> makes that lookup portable.
-        self.repo_root = self.project_root
+        # so self.repo_root must point at that local checkout root.
+        self.repo_root = self.project_root / "safe_control_gym"
 
 
 if __name__ == "__main__":
