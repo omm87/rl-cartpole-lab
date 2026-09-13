@@ -13,6 +13,15 @@ env/
 .pytest_cache/
 .mypy_cache/
 
+# Local editable safe-control-gym checkout created by bootstrap.sh
+safe_control_gym/
+
+# Generated compatibility/config files used by the GUI runtime
+src/config_overrides/
+src/lab_configs/
+src/lab_runs/
+src/temp_rl_lab_eval/
+
 # Training outputs / logs
 runs/
 wandb/
