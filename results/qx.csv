@@ -1,0 +1,4 @@
+qx,final_x_error_m,rmse_x_m,rmse_theta_deg,rms_force_n,max_theta_deg,max_force_n,settling_time_s
+1,-0.1100,0.3719,1.458,0.709,5.959,6.384,
+5,0.0254,0.3226,2.320,1.227,11.546,7.360,3.000
+10,0.0578,0.3617,2.076,0.752,8.656,3.794,
