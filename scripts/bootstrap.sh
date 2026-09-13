@@ -3,6 +3,7 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 SAFE_CONTROL_GYM_DIR="$ROOT_DIR/safe_control_gym"
+SAFE_CONTROL_GYM_COMMIT="6b5391d014f36fdfa0f9d22d92c77387e5274308"
 ENV_NAME="rl-cartpole-lab"
 
 # Make conda available in non-interactive shells when installed by Miniforge.
@@ -42,6 +43,7 @@ fi
 echo "==> Preparing repository-local safe-control-gym dependency"
 if [ -d "$SAFE_CONTROL_GYM_DIR/.git" ]; then
   echo "safe-control-gym already cloned at $SAFE_CONTROL_GYM_DIR"
+  git -C "$SAFE_CONTROL_GYM_DIR" fetch origin "$SAFE_CONTROL_GYM_COMMIT"
 else
   if [ -e "$SAFE_CONTROL_GYM_DIR" ]; then
     echo "Path exists but is not a Git checkout: $SAFE_CONTROL_GYM_DIR"
@@ -50,6 +52,11 @@ else
   fi
   git clone https://github.com/learnsyslab/safe-control-gym.git "$SAFE_CONTROL_GYM_DIR"
 fi
+
+git -C "$SAFE_CONTROL_GYM_DIR" checkout --detach "$SAFE_CONTROL_GYM_COMMIT"
+
+echo "Using safe-control-gym commit:"
+git -C "$SAFE_CONTROL_GYM_DIR" rev-parse HEAD
 
 echo "==> Installing safe-control-gym in editable mode"
 conda run --no-capture-output -n "$ENV_NAME" \
