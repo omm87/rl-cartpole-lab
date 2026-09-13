@@ -1,0 +1,4 @@
+test,initial_x,initial_x_dot,initial_theta_deg,initial_theta_dot,final_x_error_m,rmse_x_m,rmse_theta_deg,rms_force_n,max_theta_deg,max_force_n,cumulative_reward
+1,1,0,5,0,-0.1121,0.4907,1.795,0.450,6.477,1.931,124.557
+2,-1,0,-5,0,-0.1103,0.4485,2.189,0.630,8.503,2.966,127.024
+3,2,0,8,0,-0.1109,0.6950,4.965,1.931,20.959,9.629,120.134
