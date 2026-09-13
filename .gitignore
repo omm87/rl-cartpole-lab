@@ -1,0 +1,43 @@
+__pycache__/
+*.py[cod]
+*.so
+.DS_Store
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Conda / Python tooling
+.python-version
+.pytest_cache/
+.mypy_cache/
+
+# Training outputs / logs
+runs/
+wandb/
+tensorboard/
+training_results/
+*.log
+
+# LaTeX build files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# Editor files
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.swp
