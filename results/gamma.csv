@@ -1,0 +1,3 @@
+gamma,final_x_error_m,rmse_x_m,rmse_theta_deg,rms_force_n,max_theta_deg,max_force_n,cumulative_reward,settling_time_s
+0.90,-0.0227,1.4071,3.931,1.487,14.789,6.511,87.035,5.467
+0.995,-0.0290,1.0746,4.920,1.462,16.162,6.170,107.061,4.467
