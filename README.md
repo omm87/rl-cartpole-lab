@@ -59,7 +59,8 @@ rl-cartpole-lab/
 ├── environment.yml
 ├── .gitignore
 ├── src/                  # Custom GUI / experiment code
-├── configs/              # CartPole and PPO configuration files
+├── configs/
+│   └── cartpole/         # Baseline CartPole and PPO configuration
 ├── scripts/              # Convenience launch scripts
 ├── models/               # Selected trained policies
 ├── results/              # Experiment tables / exported metrics
@@ -93,11 +94,13 @@ cd rl-cartpole-lab
 
 ## Configuration
 
-`configs/cartpole/cartpole_stab_zero.yaml` contains the zero-reference CartPole task configuration used as the baseline task setup.
+`configs/cartpole/cartpole_stab_zero.yaml` contains the baseline CartPole task configuration with the zero stabilization target.
 
-`configs/cartpole/ppo_cartpole.yaml` contains the PPO configuration based on the upstream `safe-control-gym` CartPole example.
+`configs/cartpole/ppo_cartpole.yaml` contains the baseline PPO configuration based on the upstream `safe-control-gym` CartPole example.
 
-Experiment-specific variants can be stored under `configs/experiments/` so that each result can be reproduced without changing the baseline files.
+Experiment-specific training parameters are selected directly from the custom GUI rather than being stored as separate YAML files. Parameters such as the Reward weights, Discount Factor `gamma`, GAE parameter `lambda`, and PPO clipping parameter `epsilon` can be changed before starting a new training run.
+
+Observation Noise, External Disturbance, and Action Delay are used as evaluation-side robustness tests in the current lab workflow. The corresponding settings and measured performance metrics are recorded with the experiment results instead of being maintained as separate training configuration files.
 
 ## Running
 
